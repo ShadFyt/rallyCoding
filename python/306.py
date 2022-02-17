@@ -7,6 +7,7 @@ Requirements:
 
 """
 from typing import List
+from functools import reduce
 
 
 def solve(int_array: List[int], k: int) -> int:
@@ -22,4 +23,13 @@ def solve(int_array: List[int], k: int) -> int:
     return num
 
 
+def solve_with_reduce(int_array: List[int], k: int) -> int:
+    int_array.reverse()
+    if k in int_array:
+        int_array.remove(k)
+
+    return reduce(lambda a, b: a * b, int_array)
+
+
 print(solve([1, 2, 3, 4, 5], 3))
+print(solve_with_reduce([1, 2, 3, 4, 5], 3))
