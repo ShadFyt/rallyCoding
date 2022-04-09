@@ -12,7 +12,8 @@ Requirements:
 
 
 def solve(arr_one: List, arr_two: List):
-    return [arr_one[i] for i in range(len(arr_one)) if arr_one[i] in arr_two]
+    # List comperhesion with an if statement
+    return [num[1] for num in enumerate(arr_one) if num[1] in arr_two]
 
 
 print(solve([1, 2, 3, 4, 5], [4, 2]))
